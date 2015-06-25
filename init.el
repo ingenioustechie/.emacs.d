@@ -1,3 +1,5 @@
+(package-initialize)
+
 ;; Using marmalade for packages
 (require 'package)
 (add-to-list 'package-archives
@@ -31,28 +33,11 @@
 ;;(require 'epc)
 ;;(setq jedi:setup-keys t)
 ;;(setq jedi:complete-on-dot t)
-;; (setq(setq jedi:server-command '("python" "/home/mak/.emacs.d/elpa/jedi-0.1.2/jediepcserver.py"))
-;; (setq jedi:tooltip-method '(pos-tip))
+;;(setq(setq jedi:server-command '("python" "/home/mak/.emacs.d/elpa/jedi-0.1.2/jediepcserver.py"))
+;;(setq jedi:tooltip-method '(pos-tip))
 ;;(autoload 'jedi:setup "jedi" nil t)
 ;;(add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:complete-on-dot t)                 ; optional
-
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (sanityinc-solarized-dark)))
- '(custom-safe-themes (quote ("9a9e75c15d4017c81a2fe7f83af304ff52acfadd7dde3cb57595919ef2e8d736" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:background nil)))))
-
-
+;;(setq jedi:complete-on-dot t)                 ; optional
 
 
 ;; Enable copy in terminal
@@ -101,3 +86,16 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+
+
+
+
+
+
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20140414/dict")
+(ac-config-default)
+
+
+;; Reload file when its changed, its not safe so commenting
+;;(global-auto-revert-mode t)
